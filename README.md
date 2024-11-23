@@ -52,7 +52,7 @@ If the test image is compared to an image labeled "1", and the distance is small
 
 ## **Code Explanation**
 
-### **Step 1: Data Generation (`generate_mnist.py`)**
+### **Step 1: Data Generation (`src/generate_mnist.py`)**
 This script:
 - Loads the MNIST dataset from TensorFlow.
 - Preprocesses the images by normalizing them to a range of [0, 1] (which is better for similarity comparison).
@@ -75,7 +75,7 @@ np.save('data/mnist_train_labels.npy', train_labels)
 print("MNIST training data saved successfully!")
 ```
 
-### **Step 2: Visualization (`visualize_mnist.py`)**
+### **Step 2: Visualization (`src/visualize_mnist.py`)**
 This script:
 - Loads the preprocessed MNIST images and labels.
 - Randomly selects 10 images and displays them along with their labels for visual inspection.
@@ -102,7 +102,7 @@ for i, ax in enumerate(axes):
 plt.show()
 ```
 
-### **Step 3: Digit Recognition (`recognize_digits.py`)**
+### **Step 3: Digit Recognition (`src/recognize_digits.py`)**
 This script:
 - Takes a test image and compares it to the entire dataset using Euclidean distance.
 - Displays the test image with its actual label and the predicted label.
@@ -121,7 +121,7 @@ images = np.load('data/mnist_train_images.npy')
 labels = np.load('data/mnist_train_labels.npy')
 
 # Select the first image for demonstration
-test_image = images[0]
+test_image = images[0] 
 actual_label = labels[0]
 
 # Recognize the digit
